@@ -9,23 +9,23 @@
   "routes": [
     {
       "src": "/api/auth/(.*)",
-      "dest": "backend/server.js"
+      "dest": "server.js"
     },
     {
       "src": "/api/videos/(.*)",
-      "dest": "backend/server.js"
+      "dest": "server.js"
     },
     {
       "src": "/api/courses/(.*)",
-      "dest": "backend/server.js"
+      "dest": "server.js"
     },
     {
       "src": "/api/(.*)",
-      "dest": "backend/server.js"
+      "dest": "server.js"
     },
     {
       "src": "/(.*)",
-      "dest": "backend/server.js"
+      "dest": "server.js"
     }
   ]
 }
