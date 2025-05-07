@@ -51,8 +51,9 @@ const Login = () => {
             Welcome Back
           </h2>
           <p className="mt-2 text-center text-sm text-gray-600">
-            Sign in to your CourseGen AI account
+            Sign in to your CourseGPT account
           </p>
+          
         </div>
         
         <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
@@ -76,6 +77,7 @@ const Login = () => {
                 value={formData.username}
                 onChange={(e) => setFormData({...formData, username: e.target.value})}
               />
+              <p className="text-xs text-gray-500 mt-1">Demo username: <strong>rajveer</strong></p>
             </div>
             
             <div>
@@ -91,6 +93,7 @@ const Login = () => {
                 value={formData.password}
                 onChange={(e) => setFormData({...formData, password: e.target.value})}
               />
+              <p className="text-xs text-gray-500 mt-1">Demo password: <strong>rajveer</strong></p>
             </div>
           </div>
 
