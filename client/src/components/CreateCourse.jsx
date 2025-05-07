@@ -70,10 +70,10 @@ const CreateCourse = () => {
       <div className="p-6 max-w-4xl mx-auto">
         <div className="bg-white rounded-lg shadow-lg p-8 mb-6">
           <div className="flex justify-between items-center mb-6">
-            <h2 className="text-2xl font-bold">Review and Edit Course</h2>
+            <h2 className="text-2xl font-bold text-indigo-800">Review and Edit Course</h2>
             <button
               onClick={handleSave}
-              className="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition duration-200"
+              className="bg-indigo-600 text-white px-6 py-2 rounded-lg hover:bg-indigo-700 transition duration-200 shadow-md hover:shadow-lg"
             >
               Save Course
             </button>
@@ -85,7 +85,7 @@ const CreateCourse = () => {
               type="text"
               value={generatedCourse.name}
               onChange={(e) => setGeneratedCourse({...generatedCourse, name: e.target.value})}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
             />
           </div>
 
@@ -94,32 +94,35 @@ const CreateCourse = () => {
             <textarea
               value={generatedCourse.summary}
               onChange={(e) => setGeneratedCourse({...generatedCourse, summary: e.target.value})}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 h-32"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 h-32"
             />
           </div>
 
           <div className="space-y-6">
-            <h3 className="text-xl font-semibold">Chapters</h3>
+            <h3 className="text-xl font-semibold text-indigo-700">Chapters</h3>
             {generatedCourse.chapters.map((chapter, index) => (
-              <div key={index} className="bg-gray-50 rounded-lg p-6">
-                <div className="mb-4">
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Chapter {index + 1} Title
+              <div key={index} className="bg-gray-50 rounded-lg p-6 border border-gray-200 hover:shadow-md transition-shadow duration-200">
+                <div className="flex items-center mb-4">
+                  <span className="w-8 h-8 rounded-full bg-indigo-600 text-white flex items-center justify-center text-sm font-medium mr-3 shadow-sm">
+                    {index + 1}
+                  </span>
+                  <label className="block text-sm font-medium text-gray-700">
+                    Chapter Title
                   </label>
-                  <input
-                    type="text"
-                    value={chapter.title}
-                    onChange={(e) => handleChapterUpdate(index, 'title', e.target.value)}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
-                  />
                 </div>
+                <input
+                  type="text"
+                  value={chapter.title}
+                  onChange={(e) => handleChapterUpdate(index, 'title', e.target.value)}
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 mb-4"
+                />
 
                 <div className="mb-4">
                   <label className="block text-sm font-medium text-gray-700 mb-2">Summary</label>
                   <textarea
                     value={chapter.summary}
                     onChange={(e) => handleChapterUpdate(index, 'summary', e.target.value)}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 h-24"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 h-24"
                   />
                 </div>
 
@@ -129,7 +132,7 @@ const CreateCourse = () => {
                     type="text"
                     value={chapter.duration}
                     onChange={(e) => handleChapterUpdate(index, 'duration', e.target.value)}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
                   />
                 </div>
               </div>
@@ -140,12 +143,12 @@ const CreateCourse = () => {
     );
   }
 
-  // Initial form JSX remains the same
+  // Initial form
   return (
     <div className="p-6 max-w-2xl mx-auto">
-      <div className="bg-gradient-to-r from-blue-600 to-blue-800 rounded-lg shadow-lg p-8 mb-8">
+      <div className="bg-gradient-to-r from-indigo-600 to-indigo-800 rounded-lg shadow-lg p-8 mb-8">
         <h1 className="text-3xl font-bold text-white mb-2">Create New Course</h1>
-        <p className="text-blue-100">Design your perfect learning journey</p>
+        <p className="text-indigo-100">Design your perfect learning journey</p>
       </div>
 
       <form onSubmit={handleGenerate} className="bg-white rounded-lg shadow-lg p-8">
@@ -158,7 +161,7 @@ const CreateCourse = () => {
               type="text"
               value={formData.topic}
               onChange={(e) => setFormData({...formData, topic: e.target.value})}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-200"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition duration-200"
               placeholder="e.g., JavaScript Fundamentals"
               required
             />
@@ -171,7 +174,7 @@ const CreateCourse = () => {
             <textarea
               value={formData.details}
               onChange={(e) => setFormData({...formData, details: e.target.value})}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-200 h-32"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition duration-200 h-32"
               placeholder="Describe your course objectives and special focus areas..."
             />
           </div>
@@ -184,7 +187,7 @@ const CreateCourse = () => {
               <select
                 value={formData.difficulty}
                 onChange={(e) => setFormData({...formData, difficulty: e.target.value})}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-200"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition duration-200"
               >
                 <option value="beginner">Beginner</option>
                 <option value="intermediate">Intermediate</option>
@@ -200,7 +203,7 @@ const CreateCourse = () => {
                 type="text"
                 value={formData.duration}
                 onChange={(e) => setFormData({...formData, duration: e.target.value})}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-200"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition duration-200"
                 placeholder="e.g., 10 hours"
                 required
               />
@@ -211,14 +214,19 @@ const CreateCourse = () => {
             <label className="block text-sm font-medium text-gray-700 mb-2">
               Number of Chapters
             </label>
-            <input
-              type="number"
-              min="1"
-              max="12"
-              value={formData.numChapters}
-              onChange={(e) => setFormData({...formData, numChapters: parseInt(e.target.value)})}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-200"
-            />
+            <div className="flex items-center">
+              <input
+                type="range"
+                min="1"
+                max="12"
+                value={formData.numChapters}
+                onChange={(e) => setFormData({...formData, numChapters: parseInt(e.target.value)})}
+                className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-indigo-600 mr-4"
+              />
+              <span className="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full font-medium">
+                {formData.numChapters}
+              </span>
+            </div>
             <p className="mt-1 text-sm text-gray-500">Recommended: 6-10 chapters</p>
           </div>
 
@@ -228,7 +236,7 @@ const CreateCourse = () => {
             className={`w-full py-3 px-6 rounded-lg text-white font-medium transition duration-200 ${
               loading 
                 ? 'bg-gray-400 cursor-not-allowed' 
-                : 'bg-blue-600 hover:bg-blue-700 hover:shadow-lg'
+                : 'bg-indigo-600 hover:bg-indigo-700 hover:shadow-lg'
             }`}
           >
             {loading ? (

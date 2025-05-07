@@ -62,7 +62,7 @@ const CourseDetails = () => {
   };
 
   return (
-    <div className="p-6 max-w-4xl mx-auto">
+    <div className="p-6 max-w-6xl mx-auto">
       <div className="flex justify-between items-center mb-6">
         <h1 className="text-3xl font-bold">{course.name}</h1>
         {!course.chapters.some(chapter => chapter.content?.length > 0) && (
@@ -106,23 +106,25 @@ const CourseDetails = () => {
       </div>
 
       <h2 className="text-2xl font-semibold mb-4">Course Chapters</h2>
-      <div className="space-y-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-4">
         {course.chapters.map((chapter, index) => (
-          <div key={chapter._id} className="bg-white rounded-lg shadow-md p-6">
+          <div key={chapter._id} className="bg-white rounded-lg shadow-md p-5 flex flex-col h-full">
             <div className="flex justify-between items-center mb-2">
               <h3 className="text-xl font-semibold">
                 Chapter {index + 1}: {chapter.title}
               </h3>
-              <span className="text-gray-500">{chapter.duration}</span>
+              <span className="text-gray-500 whitespace-nowrap ml-2">{chapter.duration}</span>
             </div>
-            <p className="text-gray-600 mb-4">{chapter.summary}</p>
+            <p className="text-gray-600 mb-4 flex-grow">{chapter.summary}</p>
             {chapter.content && chapter.content.length > 0 && (
-              <Link 
-                to={`/dashboard/courses/${courseId}/chapters/${index}`}
-                className="inline-block bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition duration-200"
-              >
-                View Chapter Content
-              </Link>
+              <div className="mt-auto">
+                <Link 
+                  to={`/dashboard/courses/${courseId}/chapters/${index}`}
+                  className="inline-block bg-gradient-to-r from-indigo-600 to-indigo-800 hover:from-indigo-700 hover:to-indigo-900 text-white px-4 py-2 rounded transition duration-200 text-center w-full"
+                >
+                  View Chapter Content
+                </Link>
+              </div>
             )}
           </div>
         ))}
