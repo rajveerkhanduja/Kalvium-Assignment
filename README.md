@@ -6,8 +6,6 @@ Developed by [Rajveer](https://github.com/rajveerkhanduja).
 
 <p align="center">
   <a href="https://drive.google.com/file/d/1PkDuQOy3jheXy8S1IzlJRD8VScCvUEbL/view?usp=sharing">
-    <img src="/api/placeholder/800/400" alt="CourseGPT Demo" width="600">
-    <br>
     <strong>Watch Demo Video</strong>
   </a>
 </p>
