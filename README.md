@@ -77,7 +77,7 @@ Developed by [Rajveer](https://github.com/rajveerkhanduja).
    npm install
    ```
 
-## ⚙️ Configuration
+## Configuration
 
 Create a `.env` file in the backend directory with the following variables:
 
